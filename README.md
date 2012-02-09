@@ -8,7 +8,7 @@ IE6+, Chrome, Firefox, Safari, Opera.  This script has been tested and is amazin
 
 Usage
 -------------
-So easy just drop in a script tag. Boom!
+So easy to use. Drop in a script tag before the end of your body.
 
 ``` html
 <script src="js/astley.js"></script>
