@@ -11,18 +11,19 @@
 (function () {
     "use strict";
     var body = document.body,
-        url = 'http://youtu.be/dQw4w9WgXcQ';
+        url = 'http://youtu.be/dQw4w9WgXcQ',
+        rickRoll = function (ele) {
+            var tags = ele.getElementsByTagName('a'),
+                i,
+                len;
 
-    function rickRoll(ele) {
-        var tags = ele.getElementsByTagName('a'),
-            i,
-            len;
+            for (i = 0, len = tags.length; i < len; i = i + 1) {
+                tags[i].href = url;
+                tags[i].target = '_blank';
+            }
+        };
 
-        for (i = 0, len = tags.length; i < len; i = i + 1) {
-            tags[i].href = url;
-            tags[i].target = '_blank';
-        }
-    }
+    // rick roll the loaded body links
     rickRoll(body);
 
     // Check for any new links and rick roll those too!
