@@ -9,6 +9,7 @@ IE6+, Chrome, Firefox, Safari, Opera.  This script has been tested and is amazin
 Usage
 -------------
 So easy just drop in a script tag. Boom!
+
 ``` html
 <script src="js/astley.js"></script>
 ```
