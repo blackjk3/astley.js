@@ -10,13 +10,28 @@
 
 (function () {
     "use strict";
-    var tags = document.body.getElementsByTagName('a'),
-        url = 'http://youtu.be/dQw4w9WgXcQ',
-        i,
-        len;
+    var body = document.body,
+        url = 'http://youtu.be/dQw4w9WgXcQ';
 
-    for (i = 0, len = tags.length; i < len; i = i + 1) {
-        tags[i].href = url;
-        tags[i].target = '_blank';
+    function rickRoll(ele) {
+        var tags = ele.getElementsByTagName('a'),
+            i,
+            len;
+
+        for (i = 0, len = tags.length; i < len; i = i + 1) {
+            tags[i].href = url;
+            tags[i].target = '_blank';
+        }
     }
+    rickRoll(body);
+
+    // Check for any new links and rick roll those too!
+    body.addEventListener("DOMNodeInserted", function (event) {
+        var target = event.target;
+
+        if (target.tagName) {
+            rickRoll(target);
+        }
+    }, false);
+
 }());
